@@ -6,8 +6,8 @@ type Props = {
 }
 export const Main = ({bgMain, children}: Props) => {
     return (
-        <main className='bg-cyan-900 w-screen h-screen text-white'>
-            <img src={bgMain} alt="" className="absolute z-0 w-screen h-screen"/>
+        <main className='bg-bg-main bg-no-repeat bg-cover w-screen h-screen text-white'>
+            {/* <img src={bgMain} alt="" className="absolute z-0 w-screen h-screen"/> */}
             {children}
         </main>
     );
