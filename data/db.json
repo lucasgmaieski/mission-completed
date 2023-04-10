@@ -1,53 +1,11 @@
 {
   "todos": [
     {
-      "idTask": 0.8231995782334847,
-      "titleTask": "Academia",
+      "idTask": 0.691273036921606,
+      "titleTask": "opaa",
       "durationTask": 3,
-      "completedTask": false,
-      "id": 1
-    },
-    {
-      "idTask": 0.5962376659040987,
-      "titleTask": "Correr",
-      "durationTask": 4,
-      "completedTask": false,
-      "id": 2
-    },
-    {
-      "idTask": 0.2253031077333314,
-      "titleTask": "dormir",
-      "durationTask": 8,
-      "completedTask": false,
-      "id": 3
-    },
-    {
-      "idTask": 0.2379680415130514,
-      "titleTask": "",
-      "durationTask": 0,
-      "completedTask": false,
-      "id": 4
-    },
-    {
-      "idTask": 0.8758091802938759,
-      "titleTask": "",
-      "durationTask": 0,
-      "completedTask": false,
-      "id": 5
-    },
-    {
-      "idTask": 0.7982676106136388,
-      "titleTask": "",
-      "durationTask": 0,
-      "completedTask": false,
-      "id": 6
-    },
-    {
-      "idTask": 0.4890036961315707,
-      "titleTask": "opaaa",
-      "durationTask": 0,
-      "completedTask": false,
-      "id": 7
+      "completedTask": true,
+      "id": 0.3660768429405268
     }
   ]
 }
