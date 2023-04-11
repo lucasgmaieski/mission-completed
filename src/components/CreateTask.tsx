@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from "react-icons/bs";
+import TaskComponent from './TaskComponent';
 
 export const API = "http://localhost:5000";
 export type Task = {
-    idTask: number;
     id: number;
     titleTask: string;
     durationTask: number;
@@ -59,11 +59,10 @@ export const CreateTask = () => {
     }
     const handleCreateTask = async () => {
         const newTask: Task = {
-            idTask: Math.random(),
+            id: Math.random(),
             titleTask: title,
             durationTask: duration,
             completedTask: false,
-            id: Math.random(),
         }
 
         await fetch(API + "/todos", {
@@ -121,25 +120,28 @@ export const CreateTask = () => {
         
             {list.length === 0 && <p>Não há tarefas!</p>}
             {activeButton === 1 && list.map((item, key) => (
-                <div>
-                    <h3 className={item.completedTask ? "text-orange-500 line-through" : ""}>{item.titleTask}</h3>
-                    <p className="italic">Duração: {item.durationTask}h</p>
-                    <div className="flex"> <i className='w-fit' onClick={() => handleCheckTask(item)}> {item.completedTask ? <BsBookmarkCheckFill /> : <BsBookmarkCheck />} </i> <i className='w-fit'><BsTrash onClick={() => (handleDelete(item.id))} /></i></div>
-                </div>
+                <TaskComponent
+                key={key}
+                task={item}
+                onDelete={handleDelete}
+                onCheck={handleCheckTask}
+                />
             )) }
             {activeButton === 2 && list.filter((item) => item.completedTask === false).map((item, key) => (
-                <div>
-                    <h3 className={item.completedTask ? "text-orange-500 line-through" : ""}>{item.titleTask}</h3>
-                    <p className="italic">Duração: {item.durationTask}h</p>
-                    <div className="flex"> <i className='w-fit' onClick={() => handleCheckTask(item)}> {item.completedTask ? <BsBookmarkCheckFill /> : <BsBookmarkCheck />} </i> <i className='w-fit'><BsTrash onClick={() => (handleDelete(item.id))} /></i></div>
-                </div>
+                <TaskComponent
+                key={key}
+                task={item}
+                onDelete={handleDelete}
+                onCheck={handleCheckTask}
+                />
             ))}
             {activeButton === 3 && list.filter((item) => item.completedTask === true).map((item, key) => (
-                <div>
-                    <h3 className={item.completedTask ? "text-orange-500 line-through" : ""}>{item.titleTask}</h3>
-                    <p className="italic">Duração: {item.durationTask}h</p>
-                    <div className="flex"> <i className='w-fit' onClick={() => handleCheckTask(item)}> {item.completedTask ? <BsBookmarkCheckFill /> : <BsBookmarkCheck />} </i> <i className='w-fit'><BsTrash onClick={() => (handleDelete(item.id))} /></i></div>
-                </div>
+                <TaskComponent
+                key={key}
+                task={item}
+                onDelete={handleDelete}
+                onCheck={handleCheckTask}
+                />
             ))}
             
         </>
