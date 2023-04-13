@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from "react-icons/bs";
 import TaskComponent from './TaskComponent';
 
 export const API = "http://localhost:5000";
@@ -112,9 +111,9 @@ export const CreateTask = () => {
 
             <h2 className='text-center mb-2 text-3xl'>Lista de tarefas:</h2>
             <div className='mb-4'>
-                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black focus:outline-none active:border-white ${activeButton === 1 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(1)}>Todas</button>
-                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black focus:outline-none active:border-white ${activeButton === 2 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(2)}>Ativas</button>
-                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black focus:outline-none active:border-white ${activeButton === 3 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(3)}>Concluidas</button>
+                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black hover:border-black focus:outline-none active:border-white ${activeButton === 1 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(1)}>Todas</button>
+                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black hover:border-black focus:outline-none active:border-white ${activeButton === 2 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(2)}>Ativas</button>
+                <button className={`rounded-none border-x-0 border-t-0 border-b-4 border-cyan-900 w-1/3 bg-black  hover:bg-white hover:text-black hover:border-black focus:outline-none active:border-white ${activeButton === 3 ? 'border-white' : '' }`} onClick={() => toggleActiveBtn(3)}>Concluidas</button>
             </div>
 
         
