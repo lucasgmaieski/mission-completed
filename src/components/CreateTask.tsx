@@ -106,7 +106,7 @@ export const CreateTask = () => {
                     onChange={e => setDuration(parseFloat(e.target.value))} 
                     placeholder="Tempo estimado (em horas)"
                 />
-                <input onClick={handleCreateTask} className='w-full bg-black border-2 text-white mt-4 py-1 border-cyan-900 rounded-sm' type="button" value="Criar Tarefa" />
+                <input onClick={handleCreateTask} className='w-full bg-black border-2 text-white mt-4 py-2 border-cyan-900 rounded-sm ' type="button" value="Criar Tarefa" />
             </div>
 
             <h2 className='text-center mb-2 text-3xl'>Lista de tarefas:</h2>
