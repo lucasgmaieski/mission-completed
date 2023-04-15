@@ -10,6 +10,9 @@ export default {
         'bg-main': "url('../src/assets/bg.jpg')",
       }
     },
+    fontFamily: {
+      custom: ['pricedown_bl', 'sans-serif'],
+    },
   },
   plugins: [],
 }

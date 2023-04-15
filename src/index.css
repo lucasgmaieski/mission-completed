@@ -18,7 +18,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+@font-face {
+  font-family: 'pricedown_bl';
+  src: url('../public/fonts/pricedown_bl.otf');
+}
 a {
   font-weight: 500;
   color: #646cff;

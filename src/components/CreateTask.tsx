@@ -18,7 +18,7 @@ export const CreateTask = () => {
     const [list, setList] = useState<Task[]>([]);
     const [activeButton, setActiveButton] = useState(1);
     const [completed, setCompleted] = useState<boolean>(false);
-
+    const [ animateCompleted, setAnimateCompleted ] = useState<boolean>(false);
 
     //Load todos on page load
     useEffect(() => {
@@ -48,7 +48,12 @@ export const CreateTask = () => {
         })
         .then((res) => res.json())
         .then((data) => data)
-        
+        if(item.completedTask) {
+            setInterval(() => {
+                setAnimateCompleted(true);
+            }, 500);
+            setAnimateCompleted(false);
+        }
         console.log(data);
         setList((prevState) => prevState.map((t) => (t.id === data.id ? (t = data) : t)));
         
@@ -89,9 +94,9 @@ export const CreateTask = () => {
     return (
         <>
             <div className='border-b-cyan-900 border-b-2 py-4 mb-4'>
-                <h2 className='text-center text-3xl'>Adicione sua próxima tarefa:</h2>
+                <h2 className='text-center text-3xl mb-2'>Adicione sua próxima tarefa:</h2>
                 <label className='w-full' htmlFor="nameTask">O que você vai fazer?</label>
-                <input className='w-full mb-4 text-black'
+                <input className='w-full mt-1 mb-4 text-black focus-visible:outline-cyan-800 focus-visible:outline-2'
                     type="text" 
                     name="nameTask" 
                     value={title} 
@@ -99,14 +104,14 @@ export const CreateTask = () => {
                     placeholder="Título da tarefa"
                  />
                 <label className='w-full' htmlFor="duration">Duração</label>
-                <input className='w-full text-black' 
+                <input className='w-full mt-1 text-black focus-visible:outline-cyan-800 focus-visible:outline-2' 
                     type="number" 
                     name="duration" 
                     value={duration} 
                     onChange={e => setDuration(parseFloat(e.target.value))} 
                     placeholder="Tempo estimado (em horas)"
                 />
-                <input onClick={handleCreateTask} className='w-full bg-black border-2 text-white mt-4 py-2 border-cyan-900 rounded-sm ' type="button" value="Criar Tarefa" />
+                <input onClick={handleCreateTask} className='w-full bg-black border-2 text-white mt-4 py-2 border-cyan-900 rounded-sm hover:bg-white hover:text-black transition-all' type="button" value="Criar Tarefa" />
             </div>
 
             <h2 className='text-center mb-2 text-3xl'>Lista de tarefas:</h2>
