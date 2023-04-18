@@ -10,14 +10,14 @@
     {
       "titleTask": "correr",
       "durationTask": 0.5,
-      "completedTask": false,
+      "completedTask": true,
       "id": 0.21077522068605758
     },
     {
       "id": 0.9455929640068577,
       "titleTask": "Estudar Inglês",
       "durationTask": 0.5,
-      "completedTask": false
+      "completedTask": true
     }
   ]
 }

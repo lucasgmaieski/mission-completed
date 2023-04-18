@@ -8,9 +8,11 @@ export type Task = {
     durationTask: number;
     completedTask:boolean;
 }
+interface Props  {
+    setAnimatedCompleted: (animate: boolean) => void;
+}
 
-
-export const CreateTask = () => {
+export const CreateTask = ({setAnimatedCompleted}: Props) => {
 
     const [title, setTitle] = useState<string>("");
     const [duration, setDuration] = useState<number>(0);
@@ -18,7 +20,7 @@ export const CreateTask = () => {
     const [list, setList] = useState<Task[]>([]);
     const [activeButton, setActiveButton] = useState(1);
     const [completed, setCompleted] = useState<boolean>(false);
-    const [ animateCompleted, setAnimateCompleted ] = useState<boolean>(false);
+    // const [ animateCompleted, setAnimateCompleted ] = useState<boolean>(false);
 
     //Load todos on page load
     useEffect(() => {
@@ -37,7 +39,7 @@ export const CreateTask = () => {
     }, []);
     const handleCheckTask = async (item: Task) => {
         console.log(item);
-
+        
         item.completedTask = !item.completedTask;
         const data = await fetch(API + "/todos/" + item.id, {
             method: "PUT",
@@ -48,11 +50,14 @@ export const CreateTask = () => {
         })
         .then((res) => res.json())
         .then((data) => data)
+        
         if(item.completedTask) {
-            setInterval(() => {
-                setAnimateCompleted(true);
-            }, 500);
-            setAnimateCompleted(false);
+            setAnimatedCompleted(true);
+            setTimeout(() => {
+                // setAnimatedCompleted(false);
+                console.log("ta entrando no setTimeout");
+                console.log("set:" + setAnimatedCompleted);
+            }, 1000);
         }
         console.log(data);
         setList((prevState) => prevState.map((t) => (t.id === data.id ? (t = data) : t)));
