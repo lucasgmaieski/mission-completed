@@ -54,7 +54,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
         if(item.completedTask) {
             setAnimatedCompleted(true);
             setTimeout(() => {
-                // setAnimatedCompleted(false);
+                setAnimatedCompleted(false);
                 console.log("ta entrando no setTimeout");
                 console.log("set:" + setAnimatedCompleted);
             }, 1000);

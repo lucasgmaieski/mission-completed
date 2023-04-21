@@ -12,11 +12,11 @@ export default {
       keyframes: {
         blink: {
           '0%, 100%': { color: '#fff'},
-          '50%': { color: 'orange'},
+          '50%': { color: 'orange', textShadow: '0 0 2px orange'},
         }
       },
       animation: {
-        blinkk: 'blink 1s ease-in-out 1',
+        blinkk: 'blink .5s ease-in-out 2',
       }
     },
     fontFamily: {
