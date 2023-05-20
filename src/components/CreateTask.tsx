@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import TaskComponent from './TaskComponent';
 
-export const API = "http://localhost:5000";
+
+const API = import.meta.env.VITE_API;
+
+// export const API = "http://localhost:5000";
 export type Task = {
     id: number;
     titleTask: string;
@@ -21,7 +24,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
     const [activeButton, setActiveButton] = useState(1);
     const [completed, setCompleted] = useState<boolean>(false);
     // const [ animateCompleted, setAnimateCompleted ] = useState<boolean>(false);
-
+    console.log('api ' + API);
     //Load todos on page load
     useEffect(() => {
         const loadData = async() => {

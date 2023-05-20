@@ -1,13 +1,6 @@
 {
   "todos": [
     {
-      "idTask": 0.7611274508167305,
-      "titleTask": "Academia",
-      "durationTask": 0,
-      "completedTask": true,
-      "id": 0.6502666504049579
-    },
-    {
       "titleTask": "correr",
       "durationTask": 0.5,
       "completedTask": true,
@@ -17,7 +10,37 @@
       "id": 0.9455929640068577,
       "titleTask": "Estudar Inglês",
       "durationTask": 0.5,
+      "completedTask": false
+    },
+    {
+      "id": 0.17419944999640213,
+      "titleTask": "Montar pc",
+      "durationTask": 1,
       "completedTask": true
+    },
+    {
+      "id": 0.27239087718714905,
+      "titleTask": "Publicar projeto",
+      "durationTask": 3,
+      "completedTask": true
+    },
+    {
+      "id": 0.9030532400509532,
+      "titleTask": "Comemorar a publicação do prmiero projeto em React JS",
+      "durationTask": 5,
+      "completedTask": false
+    },
+    {
+      "id": 0.4195400492981567,
+      "titleTask": "Ajustar quebra no layout do projeto",
+      "durationTask": 1,
+      "completedTask": false
+    },
+    {
+      "id": 0.3738228763205542,
+      "titleTask": "Commitar alteração no projeto ",
+      "durationTask": 2,
+      "completedTask": false
     }
   ]
 }
