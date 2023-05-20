@@ -30,7 +30,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
         const loadData = async() => {
             setLoading(true);
 
-            const res = await fetch(API + "/todos")
+            const res = await fetch(API + "todos")
                 .then((res) => res.json())
                 .then((data) => data)
                 .catch((err) => console.log(err));
@@ -44,7 +44,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
         console.log(item);
         
         item.completedTask = !item.completedTask;
-        const data = await fetch(API + "/todos/" + item.id, {
+        const data = await fetch(API + "todos/" + item.id, {
             method: "PUT",
             body: JSON.stringify(item),
             headers: {
@@ -77,7 +77,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
             completedTask: false,
         }
 
-        await fetch(API + "/todos", {
+        await fetch(API + "todos", {
             method: "POST",
             body: JSON.stringify(newTask),
             headers: {
@@ -90,7 +90,7 @@ export const CreateTask = ({setAnimatedCompleted}: Props) => {
     }
     
     const handleDelete = async (id: number) => {
-        await fetch(API + "/todos/" + id, {
+        await fetch(API + "todos/" + id, {
             method: "DELETE"
         });
         setList((prevState) => prevState.filter((item) => item.id !== id));
